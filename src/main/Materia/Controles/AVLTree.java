@@ -77,7 +77,9 @@ public class AVLTree {
         }
 
     private Node rightRotate(Node nodeR){
+        System.out.println("Rightrotate on: " + nodeR.getValue() + ", Balance " +getBalance(nodeR));
         Node x = nodeR.getLeft();
+        System.out.println("New root after right rotate: " + x.getValue());
         Node temp = x.getRight();
 
         ////
@@ -96,7 +98,10 @@ public class AVLTree {
     }    
 
     private Node leftRotate(Node nodeR){
+        System.out.println("Leftrotate on: " + nodeR.getValue() + ", Balance " + getBalance(nodeR));
+        
         Node y = nodeR.getRight();
+        System.out.println("New root after left rotate: " + y.getValue());
         Node temp = y.getLeft();
 
         //Realizar la rotacion
@@ -116,6 +121,7 @@ public class AVLTree {
     public void insert(int value){
         System.out.println("Nodo a inertar sera el "+ value);
         root = insert(root, value);
+        printTree();
 
     }
     
@@ -123,7 +129,7 @@ public class AVLTree {
         printTreeNode(root, "", true);
     }
 
-    private void printTreeNode(Node root, String prefix, boolean isLeft) {
+    public void printTreeNode(Node root, String prefix, boolean isLeft) {
         if (root != null) {
             System.out.println(prefix + (isLeft ? "├── " : "└── ") + root.getValue());
             if (root.getLeft() != null || root.getRight() != null) {
