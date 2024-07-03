@@ -5,6 +5,7 @@ import javax.swing.GrayFilter;
 import main.Materia.Controles.AVLTree;
 import main.Materia.Controles.ArbolBinario;
 import main.Materia.Controles.Graph;
+import main.Materia.Controles.Sets;
 import main.Materia.Models.Node;
 import main.Materia.Models.NodeGraph;
 
@@ -54,7 +55,14 @@ public class App {
 
         runGraph();
 
+        runSets();
+
       
+
+    }
+
+    private static void runSets() {
+        new Sets();
 
     }
 
